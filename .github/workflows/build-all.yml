@@ -59,7 +59,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: 17
+          java-version: 21
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -70,7 +70,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          npm install --save-dev @capacitor/core @capacitor/cli @capacitor/android
+          npm install --save-dev @capacitor/core@^6.0.0 @capacitor/cli@^6.0.0 @capacitor/android@^6.0.0
 
       - name: Build Web Application
         run: npm run vite:build
@@ -85,7 +85,7 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew assembleDebug --stacktrace --no-daemon
 
       - name: Upload Android APK
         uses: actions/upload-artifact@v4
