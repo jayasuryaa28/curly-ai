@@ -2,7 +2,9 @@
 
 > **Create Stunning Visuals with AI✦** Generate AI images, videos, and avatars using 200+ state-of-the-art models — featuring a glowing responsive interface, studio camera controls, and multi-platform support (Web, Windows, macOS, Android).
 
-![Curly AI Studio Preview](docs/assets/curly_ai_preview.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jayasuryaa28/curly-ai/main/docs/assets/curly_ai_preview.png" alt="Curly AI Creative Studio Preview" width="100%" />
+</p>
 
 ---
 
