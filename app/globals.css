@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@source "../app";
+@source "../components";
+@source "../packages/studio/src";
+
+@theme {
+  --color-primary: #f97316;
+  --color-primary-hover: #ea580c;
+  --color-app-bg: #07090e;
+  --color-panel-bg: #0b0e14;
+  --color-card-bg: #111622;
+  --color-secondary: #fbbf24;
+  --color-muted: #94a3b8;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+/* ── Interactive Theme Engine ── */
+:root, [data-theme="imaginelab"] {
+  --theme-primary: #f97316;
+  --theme-primary-hover: #ea580c;
+  --theme-secondary: #fbbf24;
+  --theme-accent: #ff8c00;
+  --theme-glow: rgba(249, 115, 22, 0.45);
+  --theme-glow-accent: rgba(251, 191, 36, 0.35);
+  --theme-bg: #07090e;
+  --theme-card: rgba(14, 18, 27, 0.85);
+  --theme-border: rgba(249, 115, 22, 0.3);
+  --theme-border-hover: rgba(249, 115, 22, 0.7);
+  --theme-brand: #ff7a00;
+}
+
+[data-theme="cyberpunk"] {
+  --theme-primary: #a855f7;
+  --theme-primary-hover: #9333ea;
+  --theme-secondary: #06b6d4;
+  --theme-accent: #ec4899;
+  --theme-glow: rgba(168, 85, 247, 0.5);
+  --theme-glow-accent: rgba(6, 182, 212, 0.4);
+  --theme-bg: #030014;
+  --theme-card: rgba(15, 10, 40, 0.7);
+  --theme-border: rgba(168, 85, 247, 0.25);
+  --theme-border-hover: rgba(6, 182, 212, 0.6);
+  --theme-brand: #a855f7;
+}
+
+[data-theme="neon-volt"] {
+  --theme-primary: #d9ff00;
+  --theme-primary-hover: #c4e600;
+  --theme-secondary: #00f0ff;
+  --theme-accent: #ff0077;
+  --theme-glow: rgba(217, 255, 0, 0.5);
+  --theme-glow-accent: rgba(0, 240, 255, 0.4);
+  --theme-bg: #050508;
+  --theme-card: rgba(15, 15, 22, 0.75);
+  --theme-border: rgba(217, 255, 0, 0.25);
+  --theme-border-hover: rgba(0, 240, 255, 0.6);
+  --theme-brand: #d9ff00;
+}
+
+[data-theme="crimson-matrix"] {
+  --theme-primary: #ff1a53;
+  --theme-primary-hover: #e0003c;
+  --theme-secondary: #ff8000;
+  --theme-accent: #ff0055;
+  --theme-glow: rgba(255, 26, 83, 0.55);
+  --theme-glow-accent: rgba(255, 128, 0, 0.45);
+  --theme-bg: #080105;
+  --theme-card: rgba(22, 8, 14, 0.75);
+  --theme-border: rgba(255, 26, 83, 0.3);
+  --theme-border-hover: rgba(255, 128, 0, 0.6);
+  --theme-brand: #ff1a53;
+}
+
+[data-theme="emerald-void"] {
+  --theme-primary: #00ff88;
+  --theme-primary-hover: #00dd75;
+  --theme-secondary: #00e1ff;
+  --theme-accent: #38ef7d;
+  --theme-glow: rgba(0, 255, 136, 0.55);
+  --theme-glow-accent: rgba(0, 225, 255, 0.45);
+  --theme-bg: #010804;
+  --theme-card: rgba(8, 20, 14, 0.75);
+  --theme-border: rgba(0, 255, 136, 0.3);
+  --theme-border-hover: rgba(0, 225, 255, 0.6);
+  --theme-brand: #00ff88;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background: var(--theme-bg);
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  transition: background 0.4s ease;
+}
+
+/* ── Custom Scrollbar ── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-primary);
+}
+
+/* ── Sunset Cloud & Mountain Atmosphere ── */
+.sunset-glow-bg {
+  background: 
+    radial-gradient(ellipse 90% 60% at 50% 15%, rgba(249, 115, 22, 0.22), transparent 70%),
+    radial-gradient(circle 500px at 85% 25%, rgba(251, 191, 36, 0.15), transparent 70%),
+    radial-gradient(circle 450px at 15% 35%, rgba(234, 88, 12, 0.18), transparent 70%);
+}
+
+/* ── Glowing Orange Command Bar ── */
+.orange-glow-box {
+  background: rgba(13, 18, 28, 0.88);
+  border: 1px solid rgba(249, 115, 22, 0.38);
+  box-shadow: 0 0 50px rgba(249, 115, 22, 0.15), 0 20px 40px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.orange-glow-box:hover, .orange-glow-box:focus-within {
+  border-color: rgba(249, 115, 22, 0.7);
+  box-shadow: 0 0 65px rgba(249, 115, 22, 0.28), 0 25px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* ── Orange Gradient Buttons & Pills ── */
+.orange-btn-gradient {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.45);
+  transition: all 0.25s ease;
+}
+
+.orange-btn-gradient:hover {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  box-shadow: 0 0 35px rgba(249, 115, 22, 0.7);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.orange-btn-gradient:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ── Sparkle Pulse Animation ── */
+@keyframes sparkle-pulse {
+  0%, 100% { opacity: 0.85; transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 8px #f97316); }
+  50% { opacity: 1; transform: scale(1.15) rotate(10deg); filter: drop-shadow(0 0 16px #fbbf24); }
+}
+
+.sparkle-anim {
+  animation: sparkle-pulse 3s ease-in-out infinite;
+}
+
+/* ── Smooth Fade Up ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Radar Scanner ── */
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: radar-sweep 2.5s linear infinite;
+}
