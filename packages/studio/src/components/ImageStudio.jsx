@@ -925,7 +925,7 @@ export default function ImageStudio({ apiKey, onGenerationComplete, historyItems
 
   // ── Render ───────────────────────────────────────────────────────────────
   return (
-    <div className="w-full h-full flex flex-col items-center justify-start bg-app-bg relative p-4 md:p-8 py-8 sm:py-12 overflow-y-auto custom-scrollbar overflow-x-hidden">
+    <div className="w-full min-h-full flex-1 flex flex-col items-center justify-center bg-transparent relative p-4 md:p-8 py-6 sm:py-10 overflow-y-auto custom-scrollbar overflow-x-hidden">
 
       {/* ── CANVAS VIEW ─────────────────────────────────────────────────── */}
       {showCanvas && (
@@ -1016,10 +1016,9 @@ export default function ImageStudio({ apiKey, onGenerationComplete, historyItems
         </div>
       )}
 
-      {/* ── PROMPT & IMAGINELAB WORKSPACE VIEW ────────────────────────── */}
       {/* ── PROMPT & IMAGINELAB WORKSPACE VIEW (MATCHES TARGET IMAGE 2) ── */}
       {!showCanvas && (
-        <div className="w-full max-w-5xl flex flex-col items-center justify-start mx-auto px-4 py-6 sm:py-8 animate-fade-in-up">
+        <div className="w-full max-w-5xl flex-1 flex flex-col items-center justify-center mx-auto my-auto px-4 py-4 sm:py-6 animate-fade-in-up">
 
           {/* Centered Golden Sparkle Icon */}
           <div className="w-8 h-8 mx-auto mb-2 text-orange-400 text-3xl flex items-center justify-center sparkle-anim">
@@ -1184,8 +1183,8 @@ export default function ImageStudio({ apiKey, onGenerationComplete, historyItems
               </div>
             )}
 
-            {/* ── ROW 2: Style Preset Buttons (In the middle with comfortable spacing) ── */}
-            <div className="w-full flex items-center gap-2.5 my-5 overflow-x-auto pb-1 select-none custom-scrollbar">
+            {/* ── ROW 2: Style Preset Buttons (Centered with generous gaps) ── */}
+            <div className="w-full flex items-center justify-center gap-2.5 sm:gap-3 my-5 sm:my-6 overflow-x-auto pb-1 select-none custom-scrollbar">
               {STYLE_CHIPS.map((chip) => {
                 const isActive = activeChips.includes(chip.id);
                 return (

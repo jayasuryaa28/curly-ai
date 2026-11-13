@@ -348,7 +348,7 @@ export default function StandaloneShell() {
       <div className="flex-1 flex flex-col h-full overflow-hidden relative z-10">
 
         {/* ── TOP HEADER (DYNAMIC GLOWING 5-TAB CAPSULE + GEAR) ────── */}
-        <header className="flex-shrink-0 flex items-center justify-between px-4 sm:px-8 py-3 bg-[#080b12]/95 backdrop-blur-2xl border-b border-white/[0.06] z-30 min-h-[64px]">
+        <header className="flex-shrink-0 flex items-center justify-between px-6 sm:px-10 py-3.5 bg-[#080b12]/95 backdrop-blur-2xl border-b border-white/[0.06] z-30 min-h-[72px]">
           
           {/* Left: Mobile hamburger menu or Desktop Studio Indicator */}
           <div className="flex items-center gap-2 min-w-[140px]">
@@ -358,16 +358,16 @@ export default function StandaloneShell() {
             >
               ☰
             </button>
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-md">
+            <div className="hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-[0_0_8px_#f97316]" />
               <span className="text-[11px] font-black text-orange-400 font-mono tracking-wider uppercase">Curly Studio</span>
             </div>
             <span className="font-bold text-sm tracking-wide text-white md:hidden">Curly AI</span>
           </div>
 
-          {/* Desktop Center Pill Navigation - Dynamic Animated Glass Capsule (5 Tabs) */}
+          {/* Desktop Center Pill Navigation - Dynamic Animated Glass Capsule with Generous Gaps (5 Tabs) */}
           <div className="hidden md:flex flex-1 justify-center">
-            <nav className="flex items-center gap-1.5 p-1.5 rounded-full border border-white/10 bg-[#0a0e17]/85 shadow-[0_8px_32px_rgba(0,0,0,0.6)] backdrop-blur-2xl transition-all duration-300">
+            <nav className="flex items-center gap-3 p-2 rounded-full border border-white/10 bg-[#0a0e17]/90 shadow-[0_8px_32px_rgba(0,0,0,0.6)] backdrop-blur-2xl transition-all duration-300">
               {TABS.map((tab) => {
                 const isActive = currentView === 'create' && activeTab === tab.id;
                 return (
@@ -381,7 +381,7 @@ export default function StandaloneShell() {
                         setCurrentView('create');
                       }
                     }}
-                    className={`relative px-4 py-2 text-xs font-black rounded-full transition-all duration-300 flex items-center gap-2 cursor-pointer whitespace-nowrap group ${
+                    className={`relative px-5 py-2.5 text-xs sm:text-[13px] font-black rounded-full transition-all duration-300 flex items-center gap-2.5 cursor-pointer whitespace-nowrap group ${
                       isActive
                         ? 'bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 text-white shadow-[0_0_25px_rgba(249,115,22,0.5)] ring-1 ring-orange-300/60 scale-[1.03]'
                         : 'text-white/70 hover:text-white hover:bg-white/[0.08] hover:scale-[1.02]'
@@ -433,8 +433,8 @@ export default function StandaloneShell() {
           </div>
         </header>
 
-        {/* ── MAIN CONTENT AREA (DYNAMIC VIEW ROUTING) ── */}
-        <main className="flex-1 overflow-y-auto overflow-x-hidden relative custom-scrollbar">
+        {/* ── MAIN CONTENT AREA (DYNAMIC VIEW ROUTING & CENTERED WORKSPACE) ── */}
+        <main className="flex-1 flex flex-col items-center justify-center overflow-y-auto overflow-x-hidden relative custom-scrollbar">
           {/* Create Studio View */}
           {currentView === 'create' && (
             <>
