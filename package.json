@@ -1,8 +1,10 @@
 {
   "name": "open-higgsfield-ai",
   "description": "Open-source alternative to Higgsfield AI — AI image, video, cinema and lip sync studio",
+  "author": "jayasuryaa28",
   "private": true,
   "version": "1.0.0",
+  "main": "electron/main.js",
   "workspaces": [
     "packages/studio"
   ],
