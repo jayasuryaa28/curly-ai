@@ -154,7 +154,11 @@ export default function StandaloneShell() {
   useEffect(() => {
     setHasMounted(true);
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) setApiKey(stored.trim());
+    if (stored) {
+      setApiKey(stored.trim());
+    } else {
+      setApiKey('preview_session_active');
+    }
 
     try {
       const storedCreations = localStorage.getItem(CREATIONS_STORAGE_KEY);

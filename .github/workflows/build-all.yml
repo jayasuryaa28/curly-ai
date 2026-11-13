@@ -92,3 +92,37 @@ jobs:
         with:
           name: mobile-apk-android
           path: android/app/build/outputs/apk/debug/*.apk
+
+  publish-release:
+    name: Publish GitHub Release
+    needs: [build-desktop, build-android]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: all-artifacts
+
+      - name: Organize release files
+        run: |
+          mkdir -p release-files
+          find all-artifacts -name "*.apk" -exec cp {} release-files/Curly-AI.apk \;
+          find all-artifacts -name "*.exe" -exec cp {} release-files/ \;
+          find all-artifacts -name "*.dmg" -exec cp {} release-files/ \;
+          ls -la release-files
+
+      - name: Create or Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v1.0.0
+          name: "Curly AI Studio v1.0.0 — Android APK, Windows EXE & Mac DMG"
+          body: |
+            ## 🎉 Curly AI Studio v1.0.0 Release
+
+            ### ⬇️ Download for your device:
+            - **📱 Android APK:** `Curly-AI.apk` (Install directly on Android phones/tablets)
+            - **🪟 Windows Desktop:** `.exe` installer / portable application
+            - **🍎 macOS Package:** `.dmg` application bundle
+          files: release-files/*

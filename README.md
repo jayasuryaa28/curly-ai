@@ -1,72 +1,47 @@
-# Open Higgsfield AI — Open-Source Alternative to Higgsfield AI
+# Curly AI — AI Creative Studio
 
-> **The free, open-source alternative to Higgsfield AI.** Generate AI images and videos using 200+ state-of-the-art models — without the closed ecosystem or subscription fees.
+> **Create Stunning Visuals with AI✦** Generate AI images, videos, and avatars using 200+ state-of-the-art models — featuring a glowing responsive interface, studio camera controls, and multi-platform support (Web, Windows, macOS, Android).
 
-## 🌐 Try it Online — No Install Required
-
-**Hosted version:** [muapi.ai/open-higgsfield-ai](https://muapi.ai/open-higgsfield-ai)
-
-Use all four studios (Image, Video, Lip Sync, Cinema) directly in your browser — no Node.js, no setup. Sign up for a free account to start generating. The hosted version is always up to date with the latest models.
+![Curly AI Studio Preview](docs/assets/curly_ai_preview.png)
 
 ---
 
-## ⬇️ Download Desktop App
+## ⬇️ Download Apps (Mobile APK, Windows EXE, Mac DMG)
 
-One-click installers — no Node.js or terminal required.
+Pre-built standalone packages are automatically generated and available:
 
-| Platform | Download |
-|---|---|
-| macOS Apple Silicon (M1/M2/M3/M4) | [Open Higgsfield AI-1.0.0-arm64.dmg](https://github.com/Anil-matcha/Open-Higgsfield-AI/releases/download/v1.0.0/Open.Higgsfield.AI-1.0.0-arm64.dmg) |
-| macOS Intel (x64) | [Open Higgsfield AI-1.0.0.dmg](https://github.com/Anil-matcha/Open-Higgsfield-AI/releases/download/v1.0.0/Open.Higgsfield.AI-1.0.0.dmg) |
-| Windows (x64 + ARM64) | [Open Higgsfield AI Setup 1.0.0.exe](https://github.com/Anil-matcha/Open-Higgsfield-AI/releases/download/v1.0.0/Open.Higgsfield.AI.Setup.1.0.0.exe) |
+| Platform | Package Format | Download Link |
+|---|---|---|
+| 📱 **Android Mobile** | `.apk` (Capacitor + Gradle) | [Download Android APK](https://github.com/jayasuryaa28/curly-ai/actions/runs/43425696876) |
+| 🪟 **Windows Desktop** | `.exe` (NSIS Installer & Standalone) | [Download Windows EXE](https://github.com/jayasuryaa28/curly-ai/actions/runs/43425696876) |
+| 🍎 **macOS (Intel & Apple Silicon)** | `.dmg` (Disk Image) | [Download macOS DMG](https://github.com/jayasuryaa28/curly-ai/actions/runs/43425696876) |
 
-All releases: [github.com/Anil-matcha/Open-Higgsfield-AI/releases](https://github.com/Anil-matcha/Open-Higgsfield-AI/releases)
+All automated builds & artifacts: **[github.com/jayasuryaa28/curly-ai/actions](https://github.com/jayasuryaa28/curly-ai/actions)**
 
-### macOS Installation Guide
+---
 
-Because the app is not notarized by Apple, macOS Gatekeeper will block it on first launch. Follow these steps:
+## 🌐 Run Web Studio Locally
 
-**Step 1** — Mount the DMG and drag the app to `/Applications`
-
-**Step 2** — Open Terminal and run:
 ```bash
-xattr -cr "/Applications/Open Higgsfield AI.app"
+# 1. Install dependencies
+npm install
+
+# 2. Start development server
+npm run dev
 ```
 
-**Step 3** — Right-click the app in `/Applications` → click **Open** → click **Open** again on the dialog
-
-> You only need to do this once. After that, the app opens normally.
-
-**Alternative (no Terminal):**
-1. Try to open the app — macOS will block it
-2. Go to **System Settings → Privacy & Security**
-3. Scroll down to find _"Open Higgsfield AI was blocked"_
-4. Click **Open Anyway** → **Open**
-
-### Windows Installation — SmartScreen warning fix
-
-Windows SmartScreen may show a warning because the installer is not code-signed:
-
-1. Click **More info** on the SmartScreen dialog
-2. Click **Run anyway**
-
-The app will install silently to `%LocalAppData%` with a Start Menu shortcut.
+Open [http://localhost:3000/studio](http://localhost:3000/studio) in your browser.
 
 ---
 
-Open Higgsfield AI is an open-source AI image, video, cinema, and lip sync studio that brings Higgsfield-style creative workflows to everyone. Powered by [Muapi.ai](https://muapi.ai), it supports text-to-image, image-to-image, text-to-video, image-to-video, and audio-driven lip sync generation across models like Flux, Nano Banana, Midjourney, Kling, Sora, Veo, Seedream, Infinite Talk, LTX Lipsync, Wan 2.2, and more — all from a sleek, modern interface you can self-host and customize.
+Curly AI is an open-source AI image, video, cinema, and lip sync studio. Powered by Kie.ai Cloud GPU, it supports text-to-image, image-to-image, text-to-video, image-to-video, and audio-driven lip sync generation across models like Flux, Nano Banana, Midjourney, Kling, Sora, Veo, Seedream, Infinite Talk, and more.
 
-**Why Open Higgsfield AI instead of Higgsfield AI?**
-- **Free & open-source** — no subscription, no vendor lock-in
-- **Self-hosted** — your data stays on your machine
-- **200+ models** — text-to-image, image-to-image, text-to-video, image-to-video, lip sync
-- **Multi-image input** — feed up to 14 reference images into compatible models
-- **Lip Sync Studio** — animate portraits or sync lips to any audio with 9 dedicated models
-- **Extensible** — add your own models, modify the UI, build on top of it
-
-For a deep dive into the technical architecture and the philosophy behind the "Infinite Budget" cinema workflow, see our [comprehensive guide and roadmap](https://medium.com/@anilmatcha/building-open-higgsfield-ai-an-open-source-ai-cinema-studio-83c1e0a2a5f1).
-
-![Studio Demo](docs/assets/studio_demo.webp)
+**Why Curly AI?**
+- **Unified Dark Glass Interface** — Glowing orange accents with zero overflow and pixel-perfect responsiveness
+- **200+ AI Models** — Text-to-image, image-to-image, video synthesis, lip sync
+- **Cross-Platform Everywhere** — Web, Windows Desktop, macOS, and Mobile Android APK
+- **Multi-image input** — Feed reference images into compatible edit models
+- **Full Privacy & Self-Hosted** — Your API keys and data remain in your local storage
 
 ## ✨ Features
 
